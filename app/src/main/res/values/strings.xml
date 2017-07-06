@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Floow\nTest</string>
+    <string name="filter_title_view_test1">floowtest</string>
+
+
+    <string name="api_key_device_verification">AIzaSyDr_5RjFAwHbWKe2jWpQoLiKwPb1LMX2xw</string>
+    <string name="api_key_device_verification2">AIzaSyBBEdr0gMx9KrjtGAv_Wtvz_8LAl7-BOWc</string>
+
+</resources>

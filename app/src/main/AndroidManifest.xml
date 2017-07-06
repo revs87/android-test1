@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tripas.test1.test1">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter android:label="@string/filter_title_view_test1">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.test1.com/test1” -->
+                <data
+                    android:host="www.test1.com"
+                    android:pathPrefix="/test1"
+                    android:scheme="http" />
+                <!-- note that the leading "/" is required for pathPrefix-->
+                <!-- Accepts URIs that begin with "example://test1” -->
+
+                <data
+                    android:host="floowtest.io"
+                    android:scheme="floow" />
+                <data
+                    android:host="floowtest.io"
+                    android:scheme="uri" />
+                <data
+                    android:host="floowtest.io"
+                    android:scheme="intent" />
+                <data
+                    android:host="floowtest.io"
+                    android:scheme="http" />
+
+            </intent-filter>
+        </activity>
+    </application>
+
+
+    <!--
+        <supports-screens
+                  android:resizeable=["true"| "false"]
+                  android:smallScreens=["true" | "false"]
+                  android:normalScreens=["true" | "false"]
+                  android:largeScreens=["true" | "false"]
+                  android:xlargeScreens=["true" | "false"]
+                  android:anyDensity=["true" | "false"]
+                  android:requiresSmallestWidthDp="integer"
+                  android:compatibleWidthLimitDp="integer"
+                  android:largestWidthLimitDp="integer"/>
+
+        ldpi (low) ~120dpi
+        mdpi (medium) ~160dpi
+        hdpi (high) ~240dpi
+        xhdpi (extra-high) ~320dpi
+        xxhdpi (extra-extra-high) ~480dpi
+        xxxhdpi (extra-extra-extra-high) ~640dpi
+        -->
+    <supports-screens
+        android:largeScreens="true"
+        android:largestWidthLimitDp="840"
+        android:normalScreens="true"
+        android:requiresSmallestWidthDp="160"
+        android:smallScreens="false"
+        android:xlargeScreens="true" />
+
+    <!--<compatible-screens>-->
+    <!--&lt;!&ndash; all small size screens - except ldpi &ndash;&gt;-->
+    <!--<screen android:screenSize="small" android:screenDensity="mdpi" />-->
+    <!--<screen android:screenSize="small" android:screenDensity="hdpi" />-->
+    <!--<screen android:screenSize="small" android:screenDensity="xhdpi" />-->
+    <!--<screen android:screenSize="small" android:screenDensity="xxhdpi" />-->
+    <!--<screen android:screenSize="small" android:screenDensity="xxxhdpi" />-->
+    <!--&lt;!&ndash; all normal size screens - except ldpi &ndash;&gt;-->
+    <!--<screen android:screenSize="normal" android:screenDensity="mdpi" />-->
+    <!--<screen android:screenSize="normal" android:screenDensity="hdpi" />-->
+    <!--<screen android:screenSize="normal" android:screenDensity="xhdpi" />-->
+    <!--<screen android:screenSize="normal" android:screenDensity="xxhdpi" />-->
+    <!--<screen android:screenSize="normal" android:screenDensity="xxxhdpi" />-->
+    <!--&lt;!&ndash; all large size screens - except ldpi &ndash;&gt;-->
+    <!--<screen android:screenSize="large" android:screenDensity="mdpi" />-->
+    <!--<screen android:screenSize="large" android:screenDensity="hdpi" />-->
+    <!--<screen android:screenSize="large" android:screenDensity="xhdpi" />-->
+    <!--<screen android:screenSize="large" android:screenDensity="xxhdpi" />-->
+    <!--<screen android:screenSize="large" android:screenDensity="xxxhdpi" />-->
+    <!--&lt;!&ndash; all xlarge size screens - except ldpi &ndash;&gt;-->
+    <!--<screen android:screenSize="xlarge" android:screenDensity="mdpi" />-->
+    <!--<screen android:screenSize="xlarge" android:screenDensity="hdpi" />-->
+    <!--<screen android:screenSize="xlarge" android:screenDensity="xhdpi" />-->
+    <!--<screen android:screenSize="xlarge" android:screenDensity="xxhdpi" />-->
+    <!--<screen android:screenSize="xlarge" android:screenDensity="xxxhdpi" />-->
+    <!--</compatible-screens>-->
+
+</manifest>
