@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.0"
     defaultConfig {
         applicationId "com.tripas.test1.test1"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 5
         versionName "1.4"
@@ -24,6 +24,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.android.gms:play-services-gcm:10.0.1'
@@ -31,5 +32,13 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:10.0.1'
     compile 'com.google.android.gms:play-services-analytics:10.0.1'
     compile 'com.google.android.gms:play-services-safetynet:10.0.1'
+
+
+    compile 'com.google.guava:guava:22.0'
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:2.0.1'
+    }
+
     testCompile 'junit:junit:4.12'
+
 }
