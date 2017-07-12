@@ -33,6 +33,12 @@ public class SafetyNetGetAttestationTask extends AsyncTask<Context, Object, Safe
     @Override
     protected SafetyNetApi.AttestationResult doInBackground(Context... params) {
 
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         this.context = params[0];
 
         // Advance JWS status message
@@ -55,7 +61,9 @@ public class SafetyNetGetAttestationTask extends AsyncTask<Context, Object, Safe
 
     @Override
     protected void onPostExecute(SafetyNetApi.AttestationResult attestationResult) {
-        callback.onAttestation(attestationResult.getJwsResult());
+        if (callback != null
+                && attestationResult != null)
+            callback.onAttestation(attestationResult.getJwsResult());
     }
 
 }
