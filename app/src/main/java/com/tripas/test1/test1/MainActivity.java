@@ -1,9 +1,12 @@
 package com.tripas.test1.test1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import com.tripas.test1.test1.mvvm.view.TestActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,5 +26,14 @@ public class MainActivity extends AppCompatActivity {
                 safetyNetChecker.check();
             }
         });
+
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToTestViewModelActivity = new Intent(activity, TestActivity.class);
+                startActivity(goToTestViewModelActivity);
+            }
+        });
+
     }
 }
