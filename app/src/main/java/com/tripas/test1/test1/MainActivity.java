@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -29,8 +30,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+        Uri data = intent.getData();
+        if (data != null) {
+            Log.d("URI", data.toString());
+        }
+
         activity = this;
         this.title = findViewById(R.id.title);
+
+        TextView centeredTv = findViewById(R.id.title_centered);
+        if (data != null) {
+            centeredTv.setText(data.toString());
+        }
 
         findViewById(R.id.button1).setOnClickListener(new View.OnClickListener() {
             @Override
